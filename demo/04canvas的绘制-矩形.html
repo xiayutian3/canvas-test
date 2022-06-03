@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    // // 设置颜色（填充颜色）
+    // ctx.fillStyle = "blue"
+    // //绘制
+    // ctx.fillRect(100, 100, 100, 100)
+
+
+    // // 画 矩形边框边
+    // //设置边框颜色
+    ctx.strokeStyle = "red"
+    ctx.strokeRect(100,100,100,100)
+
+    // //清楚画布
+    // ctx.clearRect(0,0,600,600)
+  </script>
+</body>
+
+</html>
