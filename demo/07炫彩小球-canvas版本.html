@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    canvas{
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="800" height="500">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    // 获取随机颜色
+    function getRandom() {
+      var allType = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f" 
+      var allTypeArr = allType.split(",")
+      var color = "#"
+      for (let i = 0; i < 6; i++) {
+        var random = parseInt(Math.random() * allTypeArr.length)
+        color += allTypeArr[random];
+        
+      }
+      return color
+    }
+
+    //球类
+    function Ball(x,y,r){
+      this.x = x
+      this.y = y
+      // 初始化半径
+      this.r = r
+      // 设置随机颜色
+      this.color = getRandom()
+      // 设置行进方向
+      this.dx = parseInt(Math.random() * 10)
+      this.dy = parseInt(Math.random() * 10)
+    }
+  </script>
+</body>
+
+</html>

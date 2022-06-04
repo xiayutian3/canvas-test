@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    // 创建一个路径
+    ctx.beginPath()
+    //代表一个圆 （false 顺时针）
+    // ctx.arc(200,200,100,0,2*Math.PI,false)
+    // 也代表一个圆 （false 顺时针）
+    // ctx.arc(200,200,100,0,7,false)
+    // 也代表一个圆（false 顺时针）
+    // ctx.arc(200,200,100,0,2*3.14,false)
+
+    //逆时针(现已顺时针数 弧度数，再逆时针画线)
+    // ctx.arc(200,200,100,0,10,true)
+
+    ctx.arc(200,200,100,0,Math.PI,false)
+
+
+    ctx.stroke()
+
+    //也可以fill（填充）
+    ctx.fillStyle = 'green'
+    ctx.fill()
+  </script>
+</body>
+
+</html>
