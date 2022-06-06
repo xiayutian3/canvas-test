@@ -42,7 +42,7 @@
       this.r = r
       // 设置随机颜色
       this.color = getRandom()
-      // 设置行进方向
+      // 设置行进方向 (0-9)的范围再减5，就会有其他的方向
       this.dx = parseInt(Math.random() * 10) - 5
       this.dy = parseInt(Math.random() * 10) - 5
       // 将小球维护到数组中
