@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    // // 创建一个路径
+    // ctx.beginPath()
+
+    // //划线
+    // ctx.moveTo(100,100)
+    // ctx.lineTo(200,200)
+    // ctx.lineTo(300,100)
+    // //线的宽度
+    // ctx.lineWidth = 20
+    // //线段末端的形状
+    // // ctx.lineCap = "round"
+    // //设置线连接的部分的形状
+    // ctx.lineJoin = "round";
+    // ctx.stroke()
+
+    //设置边框虚线
+    ctx.beginPath();
+    ctx.setLineDash([14,10]) //第一个数：代表虚线的长度，第二个数：代表虚线之间的间距,可为一组交替出现
+    // 设置虚线偏移量的属性
+    ctx.lineDashOffset = 2;
+    ctx.moveTo(0,100);
+    ctx.lineTo(400, 100);
+    ctx.stroke();
+    // ctx.strokeRect(10,10,100,100)
+
+  </script>
+</body>
+
+</html>
