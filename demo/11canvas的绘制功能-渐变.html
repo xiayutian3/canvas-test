@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    // //线型渐变
+    // var linear = ctx.createLinearGradient(0, 0, 200, 200)
+    // linear.addColorStop(0, "red")
+    // linear.addColorStop(0.3, "blue")
+    // linear.addColorStop(0.5, "yellow")
+    // linear.addColorStop(1, "purple")
+    // ctx.fillStyle = linear
+    // ctx.fillRect(10,10,200,100)
+
+    //径向渐变  
+    var gradient = ctx.createRadialGradient(100,100,100,100,100,0);
+    gradient.addColorStop(0,"white"); //设置最外边的圆 -》 第一个圆的参数
+    gradient.addColorStop(1,"green"); //设置最里边的圆 -》 第二个圆的参数
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0,0,200,200);
+
+
+  </script>
+</body>
+
+</html>

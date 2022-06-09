@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+    //写文字
+    ctx.font = "30px 宋体"
+    //对齐方式
+    ctx.textAlign = "center"
+    ctx.fillText("你好，我是宋体的文字", 100, 100)
+
+
+
+  </script>
+</body>
+
+</html>
