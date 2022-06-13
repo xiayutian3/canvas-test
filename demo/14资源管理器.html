@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script>
+
+    //游戏类
+    function Game() {
+      this.dom = document.querySelector('canvas')
+      this.ctx = this.dom.getContext('2d')
+
+      //添加属性 保存需要图片地址
+      this.R = {
+        "tree": './images/tree.webp',
+        "shan": './images/shan.webp'
+      }
+      // 获取资源图片的总数
+      var allAmount = Object.keys(this.R).length
+      var count = 0
+      for (k in this.R) {
+        var src = this.R[k]
+        this.R[k] = new Image()
+        this.R[k].src = src
+        var self = this
+        this.R[k].onload = function () {
+          count++
+          //清屏
+          self.ctx.clearRect(0, 0, 600, 400)
+          self.ctx.font = "16px Arial"
+          // 设置记载文案
+          // console.log(count, allAmount)
+          self.ctx.fillText('图片已经加载:' + count + '/' + allAmount, 10, 50)
+          // 判断图片是否加载完,然后开始游戏
+          if (count === allAmount) {
+            self.start()
+          }
+        }
+      }
+    }
+    //开始游戏
+    Game.prototype.start = function () {
+      var self = this
+      this.ctx.drawImage(this.R['shan'], 200, 200, 100, 80)
+
+    }
+
+    new Game()
+  </script>
+</body>
+
+</html>
