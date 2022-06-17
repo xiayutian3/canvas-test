@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="500" height="500"></canvas>
+  <script>
+    var canvas = document.getElementById("mycanvas")
+    var ctx = canvas.getContext("2d")
+
+    //画方形
+    ctx.fillStyle = "skyblue"
+    ctx.fillRect(100,100,100,100)
+
+    //在现有的画布内容后面绘制新的图形，下面的图形会压在上面的图形上
+    ctx.globalCompositeOperation = "destination-over"
+    //画圆
+    ctx.fillStyle = "deeppink"
+    ctx.beginPath()
+    ctx.arc(200,200,60,0,7,false)
+    ctx.fill()
+
+
+  </script>
+</body>
+
+</html>
